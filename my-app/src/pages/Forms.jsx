@@ -1,13 +1,16 @@
 import React, { Component } from "react";
+import { saveValues } from "../redux/actions";
+import { connect } from 'react-redux';
 
 class Forms extends Component {
     state = {
         destiny: '',
         gems: '',
+        isDisabled: true,
     }
     buttonValidation = () => {
-        const { destiny, gems } = this.state;
-        if ( destiny && gems > 0) {
+        const { destiny } = this.state;
+        if ( destiny > 0) {
             this.setState({
                 isDisabled: false,
             })
@@ -25,23 +28,40 @@ class Forms extends Component {
         }, () => this.buttonValidation());
       };
 
+    onClick = () => {
+        const { destiny, gems } = this.state;
+        const { dispatch, history } = this.props;
+        const destinyConvert = destiny * 160
+        const obj = {destinyConvert, gems}
+        dispatch(saveValues(obj))
+        history.push('/resultado')
+    }
+
   render () {
-      const { destiny, gems } = this.state;
+      const { destiny, gems, isDisabled } = this.state;
     return (
         <section>
+            Quantos desejos você quer?
             <input 
             type="number" 
             name="destiny"
             value={ destiny }
             onChange={ this.onInputChange }/>
+            Quantas gemas você tem?
             <input 
             type="number" 
             name="gems"
             value={ gems }
             onChange={ this.onInputChange }/>
-            <button type="button">Enviar</button>
+            <button 
+            type="button"
+            disabled={ isDisabled }
+            onClick={ this.onClick }
+            >
+                Enviar
+            </button>
         </section>
     );
   }
 }
-export default Forms;
+export default connect()(Forms);

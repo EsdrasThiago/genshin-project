@@ -9,5 +9,10 @@ const simulateRequest = (response) => (callback) => {
 
 export const addUser = (user) => new Promise((resolve) => { 
     localStorage.setItem('user', user);
-    simulateRequest(SUCCESS_STATUS)(resolve)
+    simulateRequest(SUCCESS_STATUS)(resolve);
 });
+
+export const getUser = () => new Promise((resolve) => {
+    localStorage.getItem('user');
+    simulateRequest(SUCCESS_STATUS)(resolve);
+})
