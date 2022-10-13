@@ -13,7 +13,7 @@ class App extends React.Component {
   render() {
 
     return (
-      <div>
+      <div className='all'>
       <BrowserRouter>
       <Switch>
       <Route exact path="/" component={ Login }/>

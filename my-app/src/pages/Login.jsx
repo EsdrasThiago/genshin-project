@@ -46,15 +46,16 @@ class Login extends Component {
     render () {
         const { name, isDisabled, loading } = this.state;
         return(
-            <section>
+            <section className="box">
             {loading 
             ? <Loading /> 
             : (
-            <form>
+            <form className="login__form">
             <h1>Nome</h1>
-            <input 
+            <input
             type="text" 
             name="name"
+            autoComplete="off"
             value={ name }
             onChange={ this.onInputChange }
             />
