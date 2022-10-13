@@ -13,6 +13,6 @@ export const addUser = (user) => new Promise((resolve) => {
 });
 
 export const getUser = () => new Promise((resolve) => {
-    localStorage.getItem('user');
-    simulateRequest(SUCCESS_STATUS)(resolve);
+    const user = localStorage.getItem('user');
+    simulateRequest(user)(resolve);
 })
