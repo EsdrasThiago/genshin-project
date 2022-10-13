@@ -16,11 +16,14 @@ class Calculator extends Component {
     user: '',
   }
   async componentDidMount() {
-    const { gems, destiny } = this.props;
+    const { gems, destiny, history } = this.props;
     this.setState({
       loading: true,
     })
     const user = await getUser()
+    if (user === null) {
+      history.push('/nao-logado')
+    }
     if (gems < destiny) {
       this.setState({
         absence: true,
