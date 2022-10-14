@@ -24,8 +24,9 @@ class Login extends Component {
 
     buttonValidation = () => {
         const { name } = this.state;
-        const maxLength = 3
-        if ( name.length > maxLength) {
+        const minLength = 3
+        const maxLength = 7
+        if ( name.length > minLength && name.length <= maxLength) {
             this.setState({
                 isDisabled: false,
             })
@@ -60,6 +61,7 @@ class Login extends Component {
             onChange={ this.onInputChange }
             />
             <button
+            className={ isDisabled ? "invalid__button" : "button"}
             type="button"
             onClick={ this.onClick }
             disabled={ isDisabled }

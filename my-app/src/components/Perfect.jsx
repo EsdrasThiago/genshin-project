@@ -8,9 +8,9 @@ class Perfect extends Component {
   render () {
     const { user } = this.props;
     return (
-        <section>
+        <section className="results">
             <h1>{`NÃO SOBRA NEM FALTA NADA ${user.toUpperCase()}!`}</h1>
-            <button type="button" onClick={ this.buttonClick }>Voltar</button>
+            <button type="button" onClick={ this.buttonClick } className="button">Voltar</button>
         </section>
     );
   }

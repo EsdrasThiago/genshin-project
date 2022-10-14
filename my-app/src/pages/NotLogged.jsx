@@ -7,10 +7,12 @@ class NotLogged extends Component {
     }
   render () {
     return (
-        <section>
-            <h1>Faça o login para prosseguir</h1>
-            <button type="button" onClick={ this.buttonClick }>Logar</button>
+      <div className="box">
+        <section className="results">
+            <h1 >Faça o login para prosseguir</h1>
+            <button type="button" onClick={ this.buttonClick } className="button">Logar</button>
         </section>
+      </div>
     );
   }
 }

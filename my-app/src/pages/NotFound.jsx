@@ -7,10 +7,12 @@ class NotFound extends Component {
     }
   render () {
     return (
-        <section>
+      <div className="box">
+        <section className="results">
             <h1>Página não encontrada...</h1>
-            <button type="button" onClick={ this.buttonClick }>Voltar</button>
+            <button type="button" onClick={ this.buttonClick } className="button">Voltar</button>
         </section>
+      </div>
     );
   }
 }

@@ -8,9 +8,9 @@ class Absence extends Component {
   render () {
     const { value, user } = this.props;
     return (
-        <section>
+        <section className="results">
             <h1>{`Faltam ${value} gemas ${user}!`}</h1>
-            <button type="button" onClick={ this.buttonClick }>Voltar</button>
+            <button type="button" onClick={ this.buttonClick } className="button">Voltar</button>
         </section>
     );
   }

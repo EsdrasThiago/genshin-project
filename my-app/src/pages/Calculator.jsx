@@ -57,7 +57,7 @@ class Calculator extends Component {
     const { absence, over, perfect, value, user, loading } = this.state;
     const { history } = this.props;
     return (
-        <section>
+        <section className="box">
             {loading && <Loading />}
             {absence && <Absence value={ value } user={ user } history={ history }/>}
             {over && <Over value={ value } user={ user } history={ history }/>}

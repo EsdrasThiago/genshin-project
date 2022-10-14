@@ -28,7 +28,7 @@ class Forms extends Component {
     
     buttonValidation = () => {
         const { destiny } = this.state;
-        if ( destiny > 0) {
+        if ( destiny > 0 ) {
             this.setState({
                 isDisabled: false,
             })
@@ -50,6 +50,10 @@ class Forms extends Component {
         const { destiny, gems } = this.state;
         const { dispatch, history } = this.props;
         const destinyConvert = destiny * 160
+        if ( gems === '') {
+            const obj = {destinyConvert, gems: 0}
+            return obj;
+        }
         const obj = {destinyConvert, gems}
         dispatch(saveValues(obj))
         history.push('/resultado')
@@ -58,18 +62,18 @@ class Forms extends Component {
   render () {
       const { destiny, gems, isDisabled, loading } = this.state;
     return (
-        <section>
+        <section className="box">
             {loading 
             ? <Loading /> 
-            : <section>
+            : ( <section className="calculator__form">
 
-            Quantos desejos você quer?
+            <p>Quantos desejos você quer?</p>
             <input 
             type="number" 
             name="destiny"
             value={ destiny }
             onChange={ this.onInputChange }/>
-            Quantas gemas você tem?
+            <p>Quantas gemas você tem?</p>
             <input 
             type="number" 
             name="gems"
@@ -77,13 +81,14 @@ class Forms extends Component {
             onChange={ this.onInputChange }/>
             <button 
             type="button"
+            className={ isDisabled ? "invalid__button" : "button"}
             disabled={ isDisabled }
             onClick={ this.onClick }
             >
                 Enviar
             </button>
     </section>
-    }
+    )}
         </section>
         );
     }
