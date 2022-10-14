@@ -3,6 +3,8 @@ import { saveValues } from "../redux/actions";
 import { connect } from 'react-redux';
 import { getUser } from "../services/localStorage";
 import Loading from "../components/Loading";
+import ninghuang1 from '../assets/images/ninghuang1.png';
+import ninghuang2 from '../assets/images/ninghuang2.png';
 
 class Forms extends Component {
     state = {
@@ -62,6 +64,13 @@ class Forms extends Component {
   render () {
       const { destiny, gems, isDisabled, loading } = this.state;
     return (
+        <div>
+            {loading 
+            ? null
+            : ( <div>
+                <img draggable="false" src={ ninghuang1 } alt="ninghuang" className="header__image" />
+                <img draggable="false" src={ ninghuang2 } alt="ninghuang" id="ninghuang__border"/>
+                </div>)}
         <section className="box">
             {loading 
             ? <Loading /> 
@@ -90,6 +99,7 @@ class Forms extends Component {
     </section>
     )}
         </section>
+    </div>
         );
     }
 }

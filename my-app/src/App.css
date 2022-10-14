@@ -12,7 +12,8 @@
 }
 
 body {
-    background: linear-gradient(180deg, #571B3C 0%, rgba(0, 0, 0, 0) 100%), #341931;
+    background: linear-gradient(180deg, #571B3C 0%, rgba(0, 0, 0, 0) 100%), url('./assets/images/childe-background.png');
+    background-size: cover;
     width: 100vw;
     height: 100vh;
 }
@@ -23,18 +24,85 @@ body {
     justify-content: center;
 }
 
+
 .box {
     box-sizing: border-box;
     background: linear-gradient(180deg, #9D2053 0%, rgba(0, 0, 0, 0) 50%), #7A1E48;
-    min-width: 700px;
-    min-height: 450px;
+    min-width: 38vw;
+    min-height: 46vh;
     margin-top: 25vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    position: sticky;
+    
     border: 2px solid black;
     border-radius: 70px;
+    z-index: 1;
+}
+
+.header__image {
+    position: absolute;
+    width: 208px;
+    height: 208px;
+    left: 33vw;
+    top: 5vh;
+    z-index: 0;
+}
+
+.header__image__barbara {
+    position: absolute;
+    width: 208px;
+    height: 208px;
+    left: 33vw;
+    top: 7vh;
+    z-index: 0;
+}
+
+.header__image__box {
+    position: absolute;
+    width: 208px;
+    height: 208px;
+    left: 1.9vw;
+    top: -20.1vh;
+    z-index: 0;
+}
+
+#ninghuang__border {
+    position: absolute;
+    width: 104px;
+    height: 104px;
+    left: 60vw;
+    top: 60.5vh;
+    z-index: 2;
+}
+
+.forms__image {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 43vh;
+    top: 11vh;
+    z-index: 0;
+}
+
+.image__button {
+    position: absolute;
+    /* background-image: url('assets/images/xingling2.png'); */
+    width: 200px;
+    height: 200px;
+    left: 25.3vh;
+    top: 18vh;
+    z-index: 0;
+}
+
+.image__loading {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: 19vh;
+    top: 3vh;
+    z-index: 0;
 }
 
 .login__form {
@@ -49,6 +117,8 @@ body {
     font-size: 50px;
     font-style: normal;
     margin-bottom: 5px;
+    position: sticky;
+    z-index: 1;
 }
 
 .calculator__form {
@@ -82,7 +152,7 @@ body {
     -webkit-text-stroke: 3px black;
     font-size: 50px;
     font-style: normal;
-    margin-top: 300px;
+    margin-top: 340px;
 }
 
 .login__form input {
@@ -96,6 +166,8 @@ body {
     height: 55px;
     border-radius: 10px;
     margin-bottom: 20px;
+    position: sticky;
+    z-index: 1;
 }
 
 

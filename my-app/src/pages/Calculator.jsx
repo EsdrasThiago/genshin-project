@@ -5,6 +5,8 @@ import Loading from "../components/Loading";
 import Over from "../components/Over";
 import Perfect from "../components/Perfect";
 import { getUser } from "../services/localStorage";
+import xingling from '../assets/images/xingling1.png'
+import barbara2 from '../assets/images/barbara2.png'
 
 class Calculator extends Component {
   state = {
@@ -57,12 +59,17 @@ class Calculator extends Component {
     const { absence, over, perfect, value, user, loading } = this.state;
     const { history } = this.props;
     return (
+      <div>
+        {perfect && <img draggable="false" src={ xingling } alt="xingling" className="header__image" />}
+        {absence && <img draggable="false" src={ barbara2 } alt="barbara" className="header__image__barbara" />}
+        {over && <img draggable="false" src={ barbara2 } alt="barbara" className="header__image__barbara" />}
         <section className="box">
             {loading && <Loading />}
             {absence && <Absence value={ value } user={ user } history={ history }/>}
             {over && <Over value={ value } user={ user } history={ history }/>}
             {perfect && <Perfect value={ value } user={ user } history={ history }/>}
         </section>
+      </div>
     );
   }
 }

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Loading from '../components/Loading';
 import { addUser } from "../services/localStorage";
+import kazuhaHead from '../assets/images/kazuha1.png';
+import kazuhaForm from '../assets/images/kazuha2.png';
 
 class Login extends Component {
     state = {
@@ -47,11 +49,17 @@ class Login extends Component {
     render () {
         const { name, isDisabled, loading } = this.state;
         return(
+            <div>
+
+            {loading 
+            ? null
+            : <img draggable="false" src={ kazuhaHead } alt="kazuha" className="header__image"/>}
             <section className="box">
             {loading 
             ? <Loading /> 
             : (
             <form className="login__form">
+            <img draggable="false" src={ kazuhaForm } alt="kazuha2" className="forms__image" />
             <h1>Nome</h1>
             <input
             type="text" 
@@ -71,6 +79,7 @@ class Login extends Component {
             </form> )
             }
             </section>
+            </div>
     )
     }
 }
