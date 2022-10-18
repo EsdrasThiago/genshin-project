@@ -209,9 +209,62 @@ body {
     margin-bottom: 200px;
 }
 
-/* .results button{
+#play {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-top: 150px;
+    position: absolute;
+    left: 80vw;
+    top: 80vh;
+    border: 1px solid black;
+    height: 140px;
+    width: 180px;
+    background: linear-gradient(180deg, #9D2053 0%, rgba(0, 0, 0, 0) 50%), #7A1E48;
+    border-radius: 25px;
+}
+
+#sound-image {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+#eula-image {
+    position: absolute;
+    bottom: 13vh;
+    width: 200px;
+    height: 200px;
+}
+
+/* #decrement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(180deg, #9D2053 0%, rgba(0, 0, 0, 0) 50%), #7A1E48;
+    border: 1px solid black;
+    position: absolute;
+    cursor: pointer;
+    font-size: 40px;
+    left: 92vw;
+    top: 85vh;
+}
+
+#crement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(180deg, #9D2053 0%, rgba(0, 0, 0, 0) 50%), #7A1E48;
+    border: 1px solid black;
+    position: absolute;
+    cursor: pointer;
+    font-size: 40px;
+    left: 75.5vw;
+    top: 85vh;
 } */
